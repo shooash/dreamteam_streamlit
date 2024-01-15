@@ -2,4 +2,6 @@ pandas
 matplotlib
 plotly
 numpy
-bokeh
+bokeh==2.4.3
+seaborn
+
