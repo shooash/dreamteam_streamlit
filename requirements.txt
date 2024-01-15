@@ -6,3 +6,4 @@ bokeh==2.4.3
 seaborn
 IPython
 geopandas
+scikit-learn
