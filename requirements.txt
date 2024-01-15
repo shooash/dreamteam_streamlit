@@ -1,0 +1,6 @@
+pandas
+matplotlib
+plotly
+numpy
+bokeh
+pickle
