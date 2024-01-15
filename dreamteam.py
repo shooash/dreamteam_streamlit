@@ -747,7 +747,8 @@ def show_map_class(x, x_dep, show=True):
     import plotly.graph_objects as go
     import pandas as pd
     import numpy as np
-    groupes_salaires = ['Niveau de vie faible',
+    groupes_salaires = ['Tous',
+                        'Niveau de vie faible',
                         'Salaire intermédiaire',
                         'Salaire élevé',
                         'Niveau de la richesse']
@@ -820,6 +821,7 @@ def show_map_class(x, x_dep, show=True):
                                         # height=1000,
 
                             ))
+    add_map(x, x_dep)    
     for i in range(4):
         add_map(x[x.cat==i], x_dep[x_dep.cat==i])
     fig.data[0].visible = True
@@ -829,13 +831,13 @@ def show_map_class(x, x_dep, show=True):
                             zoom=5
                             ))
     fig.update_layout(
-        width = 1000,
+        width = 800,
         height = 800,
         title = 'Distribution géographique des catégories de salaire en France',
         )
 
     steps = []
-    for i in range(4):
+    for i in range(5):
         step = dict(
             # method="update",
             # args=[{"visible": [False] * 8},
@@ -852,7 +854,6 @@ def show_map_class(x, x_dep, show=True):
 
     sliders = [dict(
         currentvalue={"prefix": "Class: "},
-        #pad={"t": 4},
         steps=steps,
         active=0
     )]
@@ -863,18 +864,3 @@ def show_map_class(x, x_dep, show=True):
         return fig
     fig.show()
     
-def var_to_zip(var, filename):
-    from zipfile import ZipFile
-    import pickle
-    z = ZipFile(filename, 'w')
-    z.writestr(var, var)
-    z.close()
-
-def zip_to_var(filename):
-    from zipfile import ZipFile
-    import pickle
-    z = ZipFile(filename, 'r')
-    var_name = z.namelist()[0]
-    var = z.read(var_name)
-    #model = pickle.load(open(model_name, 'rb'))
-    return var   
