@@ -30,7 +30,7 @@ x_dep = x_dep.groupby(['codgeo_dep', 'departement']).mean().reset_index()
 y_dep_cat = x_dep.salaire.apply(cat_man)
 x_dep['cat'] = y_dep_cat
 
-@st.cache_resource
+@st.cache_data
 def get_map():
     result = dt.show_map_class(x, x_dep, show=False)
     return result
