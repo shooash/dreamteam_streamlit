@@ -7,3 +7,4 @@ seaborn
 IPython
 geopandas
 scikit-learn
+branca
