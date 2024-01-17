@@ -145,6 +145,9 @@ if page == pages[1]:
     st.write(boxplots())
     charger_carte_gini()
     '''
+    ## Analyse statistique
+    '''
+    '''
     Toutes les observations graphiques faites se sont avérées significatives après vérification par Two-sample T-test. Tous les tests ont été effectués avec des échantillons aléatoires de 1000 individus de chaque population pour simplifier les analyses. Les échantillons étaient tous normalement distribués et les variances des échantillons étaient homogènes. Ces tailles d'échantillonnages sont suffisantes pour ignorer les potentielles erreurs de type I et II. 
     
     Les salaires net moyen par heure des femmes et des hommes ont été comparés. Les hommes ont en moyenne en France dépendamment et indépendamment des régions un salaire plus élevé y compris pour la Martinique et la Guyane qui semblaient moins concernées. Cependant, relativement aux autres régions, le salaire des femmes dans ces régions semble plus intéressant que celui des hommes en observant le classement des régions pour les deux catégories. Ces différences significatives s'observent aussi entre les cadres féminins et masculins ( T= -7.69, p = 8.31e-27) ainsi que pour les travailleurs et travailleuses (T = -11.8, p = 1.23e-24). Enfin des différences significatives sont aussi observées entre les tranches d'âges et entre les sexes pour ces différentes tranches d'âge. Globalement, pour chaque tranche d'âge, les hommes gagnent mieux leur vie que les femmes. Aussi, les salaires moyens sont significativement supérieurs à chaque catégorie d'âge pour les femmes et pour les hommes. Avec pour résultat de chacun des tests des p-value très nettement inférieures au seuil fixé de 0.05.
