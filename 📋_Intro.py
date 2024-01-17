@@ -16,7 +16,7 @@ st.set_page_config(page_title='"French Industry": preuves d\'inégalité en Fran
                            '''
                     Projet "French Industry" accompli dans le cadre de la formation Data Analyst chez [DataScientest](https://datascientest.com/).
                     
-                    *Par Romain Biancato, Vincent Louison, Andrey Poznyakov et Guillaume Zighmi*
+                    *Par [Romain Biancato](https://www.linkedin.com/in/romain-biancato-data-analyst/), [Vincent Louison](https://www.linkedin.com/in/vincent-louison/), [Andrey Poznyakov](https://www.linkedin.com/in/andrey-poznyakov/) et [Guillaume Zighmi](https://www.linkedin.com/in/guillaume-zighmi-05aa3b28/)*
                     '''
                     },
                    )
