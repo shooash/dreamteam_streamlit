@@ -34,13 +34,6 @@ if st.checkbox(invitation,  key = (last_key:= last_key+1)):
     > Présentant le salaire net horaire moyen par commune, ce tableau divise les données selon la catégorie socioprofessionnelle, le sexe et l'âge. Composé de 5 136 lignes, il permet d'explorer les inégalités salariales à travers une segmentation fine des informations, bien que la date de collecte précise ne soit pas spécifiée.
     '''
     show_table_stats(ex.SALAIRE)
-"### name_geographic_information"
-"Données sur les salaires par heures pour différentes catégories sociales dans les communes."
-if st.checkbox(invitation,  key = (last_key:= last_key+1)):
-    '''
-    > Compilées en 2014, ces données offrent une base de 36 840 lignes, fournissant des informations cruciales sur la localisation des communes françaises. Toutefois, des lacunes et erreurs ont nécessité l'intégration du jeu de données « Villes de France » de Mickaël Andrieu [publié sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/villes-de-france/#/resources) pour corriger et compléter les informations initiales.
-    '''
-    show_table_stats(ex.GEO)
 "### population"
 "Informations sur la population des communes, avec la distribution par différents groupes familiaux."
 if st.checkbox(invitation,  key = (last_key:= last_key+1)):
@@ -48,6 +41,13 @@ if st.checkbox(invitation,  key = (last_key:= last_key+1)):
     > Le tableau le plus volumineux, avec 8 536 584 lignes, offre une perspective sociale en présentant le nombre d'habitants enregistrés dans les communes françaises. Classées par catégorie d'âge, sexe et mode de cohabitation, ces données enrichissent notre analyse économique en ajoutant une dimension démographique.
     '''
     show_table_stats(ex.POPULATION)
+"### name_geographic_information"
+"Données sur les salaires par heures pour différentes catégories sociales dans les communes."
+if st.checkbox(invitation,  key = (last_key:= last_key+1)):
+    '''
+    > Compilées en 2014, ces données offrent une base de 36 840 lignes, fournissant des informations cruciales sur la localisation des communes françaises. Toutefois, des lacunes et erreurs ont nécessité l'intégration du jeu de données « Villes de France » de Mickaël Andrieu [publié sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/villes-de-france/#/resources) pour corriger et compléter les informations initiales.
+    '''
+    show_table_stats(ex.GEO)
 '''
 En outre, un dataset supplémentaire, [**cities**](https://www.data.gouv.fr/en/datasets/villes-de-france/), a été inclus, offrant des coordonnées plus précises des communes en France. Ces bases constituent le socle sur lequel repose notre exploration et analyse.
 '''
