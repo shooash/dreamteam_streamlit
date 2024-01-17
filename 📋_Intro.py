@@ -27,7 +27,7 @@ st.sidebar.header('About')
 st.sidebar.write('''
                     Projet "French Industry" accompli dans le cadre de la formation Data Analyst chez [DataScientest](https://datascientest.com/).
                     
-                    *Par Romain Biancato, Vincent Louison, Andrey Poznyakov et Guillaume Zighmi*
+                    *Par [Romain Biancato](https://www.linkedin.com/in/romain-biancato-data-analyst/), [Vincent Louison](https://www.linkedin.com/in/vincent-louison/), [Andrey Poznyakov](https://www.linkedin.com/in/andrey-poznyakov/) et [Guillaume Zighmi](https://www.linkedin.com/in/guillaume-zighmi-05aa3b28/)*
                     ''')
 
 '# _French Industry_: preuves d\'inégalité en France'
