@@ -8,7 +8,7 @@ import plotly.express as px
 import exploration as ex
 from streamlit.components.v1 import html
 
-st.set_page_config(page_title='"French Industry": preuves d\'inégalité en France', 
+st.set_page_config(page_title='"French Industry": preuves d\'inégalités en France', 
                    page_icon="📋",
                    initial_sidebar_state="expanded",
                    menu_items={
@@ -30,10 +30,10 @@ st.sidebar.write('''
                     *Par [Romain Biancato](https://www.linkedin.com/in/romain-biancato-data-analyst/), [Vincent Louison](https://www.linkedin.com/in/vincent-louison/), [Andrey Poznyakov](https://www.linkedin.com/in/andrey-poznyakov/) et [Guillaume Zighmi](https://www.linkedin.com/in/guillaume-zighmi-05aa3b28/)*
                     ''')
 
-'# _French Industry_: preuves d\'inégalité en France'
+'# _French Industry_: preuves d\'inégalités en France'
 '## Contexte'
 '''
-En 2013, les secteurs marchands en France ont contribué 986 milliards d'euros, provenant de 3,3 millions d'entreprises, [selon l'Insee](https://www.insee.fr/fr/statistiques/1908497). Cela représentait plus de la moitié de la valeur ajoutée totale de l'économie.  L'analyse des données sur l'industrie permettra de dévoiler la structure et les particularités de cette composante essentielle de la vie économique, fournissant un aperçu approfondi de la période antérieure à la pandémie et soulignant les inégalités sociales et salariales des différentes catégories socio-professionnelles.
+En 2013, les secteurs marchands en France ont contribué à hauteur de 986 milliards d'euros, provenants de 3,3 millions d'entreprises, [selon l'Insee](https://www.insee.fr/fr/statistiques/1908497). Cela représentait plus de la moitié de la valeur ajoutée totale de l'économie.  L'analyse des données sur l'industrie permettra de dévoiler la structure et les particularités de cette composante essentielle de la vie économique, fournissant un aperçu approfondi de la période antérieure à la pandémie et soulignant les inégalités sociales et salariales des différentes catégories socio-professionnelles.
 '''
 '### Objectifs'
 '''

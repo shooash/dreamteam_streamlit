@@ -89,10 +89,10 @@ if page == pages[0]:
     regressor = st.selectbox(' ', models, label_visibility='collapsed', format_func=formater)
     data = load_data_regression(data_index)
     y_test, y_pred, model = regress(data, regressor=regressor)
-    mse, r2, error_rate = get_scores(y_test, y_pred)
-    st.write(f'Mean squared error: {mse}')
+    r2, mse, error_rate = get_scores(y_test, y_pred)
     st.write(f'Score r2: {r2}')
-    st.write(f'Error rate: {error_rate}')
+    st.write(f'Mean squared error: {mse}')
+    st.write(f'RMSE: {error_rate}')
     st.write(dt.show_regression_results(y_test, y_pred, show=False))
     st.write(dt.show_regression_features(data.drop('salaire', axis=1), model, show=False))
     '''
