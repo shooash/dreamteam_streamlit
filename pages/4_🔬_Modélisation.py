@@ -18,7 +18,7 @@ st.sidebar.write('## **Modélisation**')
 pages = ['Regression', 'Classification']
 page = st.sidebar.radio('Afficher les modèles de:', pages)
 
-data_selection = ['Tous', '4 valeurs salariales', '2 valeurs salariales', 'Top 6 Bayesian Ridge']
+data_selection = ['Tous', '3 variables salariales & genre', '2 variables salariales & genre', 'Top 6 coefficients Bayesian Ridge']
 top_6_br = ['salaire', 'salaire_hommes', 'salaire_26_50', 'salaire_femmes', 'salaire_50+', 'salaire_travailleur', 'salaire_travailleur_hommes']
 
 @st.cache_data
@@ -68,21 +68,21 @@ def regress(data, regressor=BayesianRidge()):
     return y_test, y_pred, model
 
 def get_scores(y_test, y_pred):
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    error_rate = np.sqrt(mse)
-    return mse, r2, error_rate
+    MSE = mean_squared_error(y_test, y_pred)
+    R² = r2_score(y_test, y_pred)
+    RMSE = np.sqrt(mse)
+    return R², MSE, RMSE
 
 if page == pages[0]:
-    '# _French Industry_: preuves d\'inégalité en France'
+    '# _French Industry_: preuves d\'inégalités en France'
     '## Modélisation : Regression'
     '''
-    **DataSet à utiliser:**
+    **Sélection des variables:**
     '''
     data_formater = lambda d: data_selection.index(d)
     data_index = data_selection.index(st.selectbox(' ', data_selection, label_visibility='collapsed'))
     '''
-    **Faire la regression avec:**
+    **Sélection de la méthode de régression:**
     '''
     models = [LinearRegression(), Ridge(), BayesianRidge()]
     formater = lambda m: m.__class__.__name__
