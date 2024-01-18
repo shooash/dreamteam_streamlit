@@ -69,9 +69,9 @@ def regress(data, regressor=BayesianRidge()):
 
 def get_scores(y_test, y_pred):
     MSE = mean_squared_error(y_test, y_pred)
-    R² = r2_score(y_test, y_pred)
+    R2 = r2_score(y_test, y_pred)
     RMSE = np.sqrt(mse)
-    return R², MSE, RMSE
+    return R2, MSE, RMSE
 
 if page == pages[0]:
     '# _French Industry_: preuves d\'inégalités en France'
