@@ -70,7 +70,7 @@ def regress(data, regressor=BayesianRidge()):
 def get_scores(y_test, y_pred):
     MSE = mean_squared_error(y_test, y_pred)
     R2 = r2_score(y_test, y_pred)
-    RMSE = np.sqrt(mse)
+    RMSE = np.sqrt(MSE)
     return R2, MSE, RMSE
 
 if page == pages[0]:
