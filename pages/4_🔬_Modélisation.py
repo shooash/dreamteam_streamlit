@@ -265,7 +265,7 @@ def classify(data, model, num_cat, fun_cat):
             title='Variables les plus importantes pour le modèle LogisticRegression'))
 
 if page == pages[1]:
-    '# _French Industry_: preuves d\'inégalité en France'
+    '# _French Industry_: preuves d\'inégalités en France'
     '## Modélisation : Classification'
     '''
     Le type de données du dataset et la nature de la variable cible (salaire) permettent l'utilisation de méthodes de classification par apprentissage non supervisé. Cette approche nécessite de reformater la variable cible en catégories. En outre, un prétraitement adapté est nécessaire pour améliorer la qualité des prédictions.

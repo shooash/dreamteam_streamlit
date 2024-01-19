@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Géographie de salaires", page_icon="🗺️")
 
-'# _French Industry_: preuves d\'inégalité en France'
+'# _French Industry_: preuves d\'inégalités en France'
 '## Distribution géographique des catégories salariales'
 
 

@@ -12,7 +12,7 @@ def show_table_stats(path):
     taux_na = pd.DataFrame({'NA': data.isna().sum(), 'Non NA' : data.count(), 'Type' : data.dtypes})
     taux_na
 
-'# _French Industry_: preuves d\'inégalité en France'
+'# _French Industry_: preuves d\'inégalités en France'
 '## Exploration'
 '''
 Dans le cadre de ce projet, nous disposons du jeu de données «French Industry», composé de quatre tableaux qui dépeignent la réalité de l'année 2014:

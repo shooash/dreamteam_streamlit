@@ -61,7 +61,7 @@ if page == pages[0]:
     col_enfants = ex.normalize_names(col_enfants)
     col_etrangers = ex.normalize_names(col_etrangers)
 
-    '# _French Industry_: preuves d\'inégalité en France'
+    '# _French Industry_: preuves d\'inégalités en France'
     '## Visualisation de données : Entreprises'
     '''
     Le dataset *base_etablissement_par_tranche_effectif* présente des groupes très différents de données. Après la phase de préparation on assemble dans un même tableau les chiffres relatifs à la population, le nombre d'entreprises total («net»), micro entreprises, PME, ETI et GE. Cela nous permet de vérifier s'il existe une corrélation entre ces valeurs par communes et par départements.
