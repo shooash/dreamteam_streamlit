@@ -1131,12 +1131,12 @@ def show_boxplots_hommes_femmes(show=False):
         "SNHMH5014" : "salaire net moyen par heure pour les hommes de plus de 50 ans"
         })
 
-    cols_to_plot = df.iloc[:, :7]
+    cols_to_plot = df.iloc[:, 7:17]
 
     # Créer un boxplot en salaire moyen / par statut
     fig = plt.figure(figsize=(12, 8))
     sns.boxplot(cols_to_plot, orient='h', palette='Set2')
-    plt.title('salaire moyen / par CSP ')
+    plt.title('salaire moyen pour les femmes et hommes / par CSP ')
     plt.xlabel('Valeurs')
     if not show:
         return fig
