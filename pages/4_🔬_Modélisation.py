@@ -52,7 +52,7 @@ def load_data_regression(selection = 0):
              )
     return x
     
-def regress(data, regressor=BayesianRidge()):
+def regress(data, regressor):
     # model_name = 'models/model_' + regressor.__class__.__name__
     # test_name = 'models/test_' + regressor.__class__.__name__
     # pred_name = 'models/pred_' + regressor.__class__.__name__

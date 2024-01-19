@@ -1099,6 +1099,50 @@ def check_restore_rom_data():
         return True
     return False
 
+def show_boxplots_hommes_femmes(show=False):
+    # Focus sur les données des salaire moyen(hommes + femmes) / par CSP
+    df = pd.read_csv(SALAIRE)
+    # Changement de nom des colonnes pour plus de compréhension
+    df = df.rename(columns = {"CODGEO" : "ID géographique de la ville",
+        "LIBGEO" : "nom de la ville",
+        "SNHM14" : "salaire net moyen",
+        "SNHMC14" : "salaire net moyen par heure pour les cadres",
+        "SNHMP14" : "salaire net moyen par heure pour un cadre moyen",
+        "SNHME14" : "salaire net moyen par heure pour l'employé",
+        "SNHMO14" : " salaire net moyen par heure pour le travailleur",
+        "SNHMF14" : "salaire net moyen pour les femmes",
+        "SNHMFC14" : "salaire net moyen par heure pour les cadres féminins",
+        "SNHMFP14" : "salaire net moyen par heure pour les cadres moyens féminins",
+        "SNHMFE14" : "salaire net moyen par heure pour une employée ",
+        "SNHMFO14" : "salaire net moyen par heure pour une travailleuse ",
+        "SNHMH14" : "salaire net moyen pour un homme",
+        "SNHMHC14" : "salaire net moyen par heure pour un cadre masculin",
+        "SNHMHP14" : "salaire net moyen par heure pour les cadres moyens masculins",
+        "SNHMHE14" : "salaire net moyen par heure pour un employé masculin",
+        "SNHMHO14" : "salaire net moyen par heure pour un travailleur masculin",
+        "SNHM1814" : "salaire net moyen par heure pour les 18-25 ans",
+        "SNHM2614" : "salaire net moyen par heure pour les 26-50 ans",
+        "SNHM5014" : "salaire net moyen par heure pour les >50 ans",
+        "SNHMF1814" : "salaire net moyen par heure pour les femmes âgées de 18 à 25 ans",
+        "SNHMF2614" : "salaire net moyen par heure pour les femmes âgées de 26 à 50 ans",
+        "SNHMF5014" : "salaire net moyen par heure pour les femmes de plus de 50 ans",
+        "SNHMH1814" : "salaire net moyen par heure pour les hommes âgés de 18 à 25 ans",
+        "SNHMH2614" : "salaire net moyen par heure pour les hommes âgés de 26 à 50 ans",
+        "SNHMH5014" : "salaire net moyen par heure pour les hommes de plus de 50 ans"
+        })
+
+    cols_to_plot = df.iloc[:, :7]
+
+    # Créer un boxplot en salaire moyen / par statut
+    plt.figure(figsize=(12, 8))
+    sns.boxplot(cols_to_plot, orient='h', palette='Set2')
+    plt.title('salaire moyen / par CSP ')
+    plt.xlabel('Valeurs')
+    if not show:
+        return plt
+    plt.show()
+
+
 def show_boxplots(show=True):
     df = pd.read_csv(SALAIRE)
     # Changement de nom des colonnes pour plus de compréhension

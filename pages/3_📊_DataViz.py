@@ -105,7 +105,7 @@ if page == pages[0]:
     '''
     st.write(charger_carte(df_communes, df_deps))
     '''
-    Sur les cartes on peut bien distinguer plusieurs clastères industrielles, notamment Île-de-France, Vallée du Rhône, Marseille, Toulouse et Lille. La région parisienne est assez évidemment dans une situation exclusive, ayant des chiffres d'industrialisation exceptionnels.
+    Sur les cartes on peut bien distinguer plusieurs clusters industrielles, notamment Île-de-France, Vallée du Rhône, Marseille, Toulouse et Lille. La région parisienne est assez évidemment dans une situation exclusive, ayant des chiffres d'industrialisation exceptionnels.
     '''
     
 if page == pages[1]:
@@ -135,6 +135,10 @@ if page == pages[1]:
     def boxplots():
         result = ex.show_boxplots(show=False)
         return result
+    @st.cache_data
+    def boxplots_sel():
+        result = ex.show_boxplots_hommes_femmes(show=False)
+        return result
     
     st.pyplot(corr_plot('SNHM14'))
     st.pyplot(corr_plot('SNHMC14'))
@@ -143,6 +147,7 @@ if page == pages[1]:
     Les boxplots nous montrent que les données sont en général compactées. Elles ont tendance à s'élargir et à avoir une plus grande amplitude lorsqu'on est âgé de plus de 50 ans et que l'on appartient à une CSP supérieure. Enfin, nous noterons qu'il y a une différence notable sur la répartition des données et la valeur des données entre les hommes et les femmes.
     '''
     st.write(boxplots())
+    st.write(boxplots_sel())
     charger_carte_gini()
     '''
     ## Analyse statistique
