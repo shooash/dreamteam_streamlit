@@ -1134,12 +1134,12 @@ def show_boxplots_hommes_femmes(show=False):
     cols_to_plot = df.iloc[:, :7]
 
     # Créer un boxplot en salaire moyen / par statut
-    plt.figure(figsize=(12, 8))
+    fig = plt.figure(figsize=(12, 8))
     sns.boxplot(cols_to_plot, orient='h', palette='Set2')
     plt.title('salaire moyen / par CSP ')
     plt.xlabel('Valeurs')
     if not show:
-        return plt
+        return fig
     plt.show()
 
 
