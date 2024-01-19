@@ -21,7 +21,7 @@ page = st.sidebar.radio('Afficher les modèles de:', pages)
 data_selection = ['Tous', '3 variables salariales & genre', '2 variables salariales & genre', 'Top 6 coefficients Bayesian Ridge']
 top_6_br = ['salaire', 'salaire_hommes', 'salaire_26_50', 'salaire_femmes', 'salaire_50+', 'salaire_travailleur', 'salaire_travailleur_hommes']
 
-@st.cache_data
+#@st.cache_data
 def load_data_regression(selection = 0):
     select = [
         dt.selection_max,
