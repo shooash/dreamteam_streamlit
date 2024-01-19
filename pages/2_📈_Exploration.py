@@ -40,7 +40,7 @@ if st.checkbox(invitation,  key = (last_key:= last_key+1)):
     '''
     > Le tableau le plus volumineux, avec 8 536 584 lignes, offre une perspective sociale en présentant le nombre d'habitants enregistrés dans les communes françaises. Classées par catégorie d'âge, sexe et mode de cohabitation, ces données enrichissent notre analyse économique en ajoutant une dimension démographique.
     '''
-    show_table_stats(ex.POPULATION)
+    show_table_stats(ex.POPULATION_ORIG)
 "### name_geographic_information"
 "Données sur les salaires par heures pour différentes catégories sociales dans les communes."
 if st.checkbox(invitation,  key = (last_key:= last_key+1)):
