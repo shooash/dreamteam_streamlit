@@ -216,8 +216,8 @@ def get_logreg(n_cat, x_train, y_train, x_test, y_test, fun_cat=None):
         pickle.dump(y_pred, open(pred_name, 'wb'))
         pickle.dump(scaler, open(scaler_name, 'wb'))
         pickle.dump(x_test, open(x_name, 'wb'))
-    # x_test_scaled = x_test.copy()
-    # x_test_scaled[:] = scaler.transform(x_test)
+    x_test_scaled = x_test.copy()
+    x_test_scaled[:] = scaler.transform(x_test)
     dat = dt.get_scores(y_test_cat, y_pred, "SVC %d catégories" % n_cat)
     st.write(dt.show_class_matrix(y_test_cat, y_pred, title, show=False))
     st.dataframe(pd.DataFrame(classification_report(y_test_cat, y_pred, output_dict=True)).transpose(), width=600)
@@ -227,9 +227,8 @@ def get_logreg(n_cat, x_train, y_train, x_test, y_test, fun_cat=None):
     except:
         features = dt.get_top_features_svc(x_test, y_test_cat, model, scaler)
         pickle.dump(features, open(features_name, 'wb'))
-    #pas de roc pour svc si pas kernel linear
-    #roc = dt.get_auc(x_test_scaled, y_test_cat, model)
-    return dat, features
+    roc = dt.get_auc(x_test_scaled, y_test_cat, model)
+    return dat, features, roc
 
 def cat_man(y):
     seuls = [1622/151.67, #Minimum pour vivre en 2014 selon le Baromètre de DREES https://drees.solidarites-sante.gouv.fr/sites/default/files/2021-01/principaux_enseignements_barometre_2015.pdf P.22
@@ -259,10 +258,16 @@ def classify(data, model, num_cat, fun_cat):
             text_auto='.4f', labels={'index' : 'Valeurs', 'value' : 'Importance', 'variable' : 'Selection'},
             title='Variables les plus importantes pour le modèle SVC'))
     if model.__class__ is LogisticRegression:
-        dat, features = get_logreg(num_cat, x_train, y_train, x_test, y_test, fun_cat)
+        dat, features, roc = get_logreg(num_cat, x_train, y_train, x_test, y_test, fun_cat)
         st.write(px.bar(features, orientation='h', 
             text_auto='.4f', labels={'index' : 'Valeurs', 'value' : 'Importance', 'variable' : 'Selection'},
             title='Variables les plus importantes pour le modèle LogisticRegression'))
+        # Courbe ROC
+        fig = go.Figure()
+        fig.update_layout(title='ROC curve LogisticRegression', width=800)
+        fig.add_scatter(x=roc[0], y=roc[1], name='Modèle (auc = {:0.2f})'.format(roc[2]), mode='lines')
+        fig.add_scatter(x=[0,1], y=[0,1], name='Aléatoire (auc = 0.5)',  mode='lines', line_dash='dash')
+        st.write(fig)
 
 if page == pages[1]:
     '# _French Industry_: preuves d\'inégalités en France'
