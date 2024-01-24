@@ -309,10 +309,9 @@ if page == pages[1]:
     Les taux de salaires de différents groupes sociaux jouent un rôle clé pour la prédiction des salaires des hommes et des femmes. Dans les modèles sans ces valeurs la qualité de prédiction diminue drastiquement avec l'augmentation du nombre de classes. Mais les deux catégories sont toujours bien prédites.
     
     Il est étonnant que les modèles utilise très peu la catégorie "sexe" pour prédire le niveau de salaires moyen pour les hommes et les femmes. Les facteurs les plus souvent mentionnés parmi les plus importants sont les suivants :
-    - Le taux de grandes et moyennes entreprises.
-    - Le taux d'enfants de plus de 50 ans vivants avec un/deux parents. 
-    - Le taux d'hommes de 15-24 ans vivant seuls avec des enfants.
-    - Le taux de couples de plus de 50 ans.
+    - Le taux de salaire des jeunes actifs (18-25 ans).
+    - Le taux de salaire des employées par rapport au salaire moyen par commune.
+    - Le taux de salaire des cadres et des travailleurs.
     
-    La manque de valeur “sexe” parmi les components les plus important pourrait s'expliquer par le fait que plus souvent les salaire de deux genres dans une même ville tombe dans une seule catégorie. Or, on sait très bien que les catégories de niveau de vie faible (0) et de la richesse (3) sont représentées quasi exclusivement par les revenus des femmes et des hommes. En plus si on supprime cette séparation et si on revient vers le salaire moyen par commune la qualité de prédiction devient trop faible.
+    La manque de valeur "sexe" parmi les components les plus important pourrait s'expliquer par le fait que plus souvent les salaire de deux genres dans une même ville tombe dans une seule catégorie. Or, on sait très bien que les catégories de niveau de vie faible (0) et de la richesse (3) sont représentées quasi exclusivement par les revenus des femmes et des hommes. En plus si on supprime cette séparation et si on revient vers le salaire moyen par commune la qualité de prédiction devient trop faible.
     '''

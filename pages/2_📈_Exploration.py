@@ -1,11 +1,24 @@
+from zipfile import ZIP_DEFLATED, ZipFile
 import streamlit as st
 import exploration as ex
 import pandas as pd
 
 st.set_page_config(page_title="Exploration", page_icon="📈")
 last_key = 0
+
+
 def show_table_stats(path):
     data = pd.read_csv(path)
+    st.write("Premières lignes du dataset qui a les dimensions {}:".format(data.shape))
+    st.dataframe(data.head(5))
+    st.dataframe(data.describe())
+    taux_na = pd.DataFrame({'NA': data.isna().sum(), 'Non NA' : data.count(), 'Type' : data.dtypes})
+    taux_na
+
+@st.cache_resource
+def show_table_stats_zip(path):
+    z = ZipFile(path + '.zip', 'r')
+    data = pd.read_csv(z.open(path, 'r'))
     st.write("Premières lignes du dataset qui a les dimensions {}:".format(data.shape))
     st.dataframe(data.head(5))
     st.dataframe(data.describe())
@@ -40,7 +53,7 @@ if st.checkbox(invitation,  key = (last_key:= last_key+1)):
     '''
     > Le tableau le plus volumineux, avec 8 536 584 lignes, offre une perspective sociale en présentant le nombre d'habitants enregistrés dans les communes françaises. Classées par catégorie d'âge, sexe et mode de cohabitation, ces données enrichissent notre analyse économique en ajoutant une dimension démographique.
     '''
-    show_table_stats(ex.POPULATION_ORIG)
+    show_table_stats_zip(ex.POPULATION_ORIG)
 "### name_geographic_information"
 "Données sur les salaires par heures pour différentes catégories sociales dans les communes."
 if st.checkbox(invitation,  key = (last_key:= last_key+1)):
