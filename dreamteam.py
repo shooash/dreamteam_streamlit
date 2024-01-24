@@ -25,7 +25,7 @@ df = df.dropna()
 # Listes de colonnes
 col_geo = ['codgeo', 'codgeo_reg']
 col_geo_names = ['region', 'departement', 'commune']
-col_salaire = [c for c in df.columns if c.startswith('salaire_')]
+col_salaire = [c for c in df.columns if c.startswith('salaire_') and not c.endswith('sex')]
 col_salaire_limited = [c for c in col_salaire if 'cadre' not in c]
 col_hommes = [ i for i in df.columns if ('homme' in i) and ('salaire' not in i) and not i.startswith('enfant')]
 col_femmes = [ i for i in df.columns if ('femme' in i) and ('salaire' not in i) and not i.startswith('enfant')]
@@ -525,7 +525,7 @@ def get_top_features_svc(x_test, y_test, model, scaler):
     x_test_scaled[:] = scaler.transform(x_test)
     perm_importance = permutation_importance(model, x_test_scaled, y_test)
     dat = pd.Series(perm_importance.importances_mean, index=x_test.columns)
-    dat = dat.reindex(dat.abs().sort_values(ascending=True).head(10).index)
+    dat = dat.reindex(dat.abs().sort_values(ascending=True).tail(10).index)
     return dat
 
 def get_top_features_forest(x_test, model):
@@ -533,7 +533,8 @@ def get_top_features_forest(x_test, model):
     Faire une série avec les features les plus important selon RandomForestClassifier.
     '''
     dat = pd.Series(model.feature_importances_, index=x_test.columns)
-    dat = dat.sort_values(ascending=True).head(10)
+    dat = dat.reindex(dat.abs().sort_values(ascending=True).tail(10).index)
+#    dat = dat.sort_values(ascending=True).head(10)
     return dat
 
 def get_scores(y_test, y_pred, tag):
