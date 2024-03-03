@@ -19,4 +19,9 @@ Il est aussi important d'aborder une limite très importante de notre projet. No
 
 En effet, [en 2021 l'INSEE met en avant](https://www.insee.fr/fr/statistiques/6960132) un constat effrayant : « le revenu salarial des femmes est inférieur de 24,4 % à celui des hommes ». Cependant l'INSEE dans cette même étude avance un tout autre résultat : « à poste comparable et temps de travail équivalent, l'écart de salaires entre les femmes et hommes atteint 4,3 %. » Cela mets en avant le fait qu'en moyenne les hommes occupent des postes plus rémunérateurs (cela peut être une autre forme d'inégalité mais en dehors de notre étude) et que pour obtenir des résultats plus pertinent dans notre projet il aurait fallu que nous ayons à notre disposition des données sur les types d'emplois occupés. 
 
+
+'''
+
+'''
+**Notre projet peut être consulté en ligne: https://DreamTeamDataScientest.streamlit.app/**
 '''
