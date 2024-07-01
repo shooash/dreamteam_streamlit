@@ -273,7 +273,7 @@ if page == pages[1]:
     '# _French Industry_: preuves d\'inégalités en France'
     '## Modélisation : Classification'
     '''
-    Le type de données du dataset et la nature de la variable cible (salaire) permettent l'utilisation de méthodes de classification par apprentissage non supervisé. Cette approche nécessite de reformater la variable cible en catégories. En outre, un prétraitement adapté est nécessaire pour améliorer la qualité des prédictions.
+    Le type de données du dataset et la nature de la variable cible (salaire) permettent l'utilisation de méthodes de classification. Cette approche nécessite de reformater la variable cible en catégories. En outre, un prétraitement adapté est nécessaire pour améliorer la qualité des prédictions.
     
     En conséquence, nous avons obtenu un tableau de 85 colonnes, y compris la variable cible. La variable sexe a été ajoutée ainsi que la moyenne des salaires par genre qui servent comme variable cible 	(snhmf14 et snhmh14 du dataset “net_salary_per_town_categories”). Des colonnes contenant les proportions d'hommes, de femmes et d'enfants ont également été ajoutées, ainsi que le nombre d'habitants par tranche d'âge pour chaque commune étudiée.
     
